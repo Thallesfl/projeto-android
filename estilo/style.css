@@ -1,0 +1,208 @@
+@charset 'UTF-8';   
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+RO&display=swap');
+/* Aqui esta uma fonte que eu tirei do Google Fonts, que usarei no meu codigo por meio de uma variavel (VAR)*/
+
+@font-face {
+    font-family:'Android';
+    src: url(../fontes/idroid.otf) format(opentype); /*Usado para inserir fonte baixada pelo site DAFONT*/
+    font-weight: normal; 
+}
+:root {
+    --cor0:#c5ebd6;  /*Dessa forma eu não preciso usar FONT-FAMILY: WHITE; e sim posso apenas usar FONT-FAMILY: var(--cor0); */
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrão:Arial, Helvetica, sans-serif; /*Fonte do sistema do vscode*/
+    --fonte-destaque: "Bebas Neue", cursive; /*Fonte usada do Google Fonts*/
+    --fonte-android: 'Android'; /* fonte baixada pelo site DAFONT */
+
+}
+
+* {
+    margin: 0px; 
+    padding: 0px;
+     /*Essa é uma CONFIGURAÇÃO UNIVERSAL que ira fazer todas as TAGS do meu site ficarem com uma mesma configuraçaõ, no caso aqui no momento todos os H1, H2, NAV, A, P E ETC estarão com a margem em 0px e o e o preeenchimento em 0px */
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrão);
+}
+
+a.externo::after {
+content: '\00A0\1F517'; /*00a0 foi usado para colocar um pequeno espaço e 1f517 foi usado para colocar item depois da link A*/
+}
+
+
+header {
+  background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);  
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.534);
+}
+
+header > p {
+    color:white ;
+      font-family: var(--fonte-padrão);
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.534);
+      margin-bottom: 20px;
+
+    
+}
+ 
+nav {   
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.367);
+}
+
+nav a {
+    color: var(--cor1);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 1s; /* USADO PARA FAZER LEVE TRANSIÇÃO QUANDO PASSAR O MOUSE EM CIMA E ACONTECER O HOVER*/
+  
+}   
+
+nav  a:hover {
+    background-color: var(--cor3); /* essa parte se refere aos links */
+    color: var(--cor5);
+}
+
+ main {
+    background-color: white;
+max-width: 1000px;
+min-width: 300px;
+margin: auto;
+margin-bottom: 30PX;
+padding: 20PX;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.485);
+border-bottom-left-radius: 10px; /*CANTO ARRENDODADO NA INFERIOR ESQUERDA*/
+border-bottom-right-radius: 10px; /*CANTO ARREDONDADO NA INFERIOR DIREITA*/
+ }
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main  h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4); 
+    font-size: 1.3em;
+    font-weight: normal;
+   background-image: linear-gradient(to right,var(--cor1), transparent);
+   text-indent: 8px;
+}
+
+main p {
+    margin:  15px 0px 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em; /*USADO PARA COLOCAR ESPAÇAMENTO ENTRE LINHAS */
+    font-size: 1.0em;
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a {
+text-decoration: none;
+font-weight: bold;
+color: var(--cor5);
+background-color: var(--cor1);
+padding:  2px 6px ;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor3);
+}
+main img {
+    width:100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /* aqui se faz necessario colocar o DISPLAY-BLOCK,  senão a imagem não centraliza com o MARGIN:AUTO*/
+    margin: auto;
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative; /* posição relativa*/
+}
+
+div.video > iframe {
+position: absolute;  /* posição absoluta do iframe do video*/
+top: 5%;
+left: 5%; 
+width: 90%; 
+height: 90%;
+}   /*DESSA FORMA, COM O VIDEO IFRAME DO VIDEO DENTRO DE UMA DIV E USANDO O PARAMETROS TOP, LEFT, WIDTH E HEIGHT, EU POSSO COLOCAR O TAMANHO DA CAIXA DO VIDEO DO TAMANHO E POSIÇÃO QUE EU QUISER */
+
+aside h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* usado a margem negativa para ficar bem colocado dentro de aside, sem sair pra fora da tag*/
+    border-radius: 10px 10px 0px 0px ; 
+}
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.285);
+}
+
+aside ul {
+    list-style-position: inside; /*FAZ COM QUE AS "BOLINHAS" DA LISTA FIQUE PARA DENTRO DA DIV OU TAG SELECIONADA*/
+    columns: 2; /*USADO PARA COLOCAR A LISTA OL OU UL EM COLUNAS , NESSA CASO AI ESTA DIVIDIDO EM 2*/
+    list-style-type:'🗸';
+}
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
